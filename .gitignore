@@ -9,3 +9,4 @@ env/
 *.sqlite
 *.sqlite3
 shop_data.db
+tools/
