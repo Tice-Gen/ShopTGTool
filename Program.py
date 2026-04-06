@@ -60,6 +60,10 @@ def get_webhook_base_url() -> str:
     if explicit:
         return explicit
 
+    render_url = os.getenv("RENDER_EXTERNAL_URL", "").strip().rstrip("/")
+    if render_url:
+        return render_url
+
     koyeb_domain = os.getenv("KOYEB_PUBLIC_DOMAIN", "").strip()
     if koyeb_domain:
         return f"https://{koyeb_domain}"
